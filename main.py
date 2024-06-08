@@ -23,10 +23,10 @@ GREEN = "#184a29"
 PURPLE = "#611c35"
 CYAN = "#11294d"
 GOLDEN = "#e65100"
-green_pic = PhotoImage(file="~/Desktop/Python/Ludo/green_token.png")
-purple_pic = PhotoImage(file="~/Desktop/Python/Ludo/purple_token.png")
-cyan_pic = PhotoImage(file="~/Desktop/Python/Ludo/cyan_token.png")
-red_pic = PhotoImage(file="~/Desktop/Python/Ludo/red_token.png")
+green_pic = PhotoImage(file="green_token.png")
+purple_pic = PhotoImage(file="purple_token.png")
+cyan_pic = PhotoImage(file="cyan_token.png")
+red_pic = PhotoImage(file="red_token.png")
 
 # --------------------------------------------------Column = 1--------------------------------------------------------
 r1 = [crt(0, 0, 49, 49, fill=RED), not_occupied]
@@ -523,7 +523,7 @@ button_cyan.place(x=246, y=641)
 # ------------------------------------------------SAVE, LOAD, NEW GAME LOGIC------------------------------
 
 def save():
-    with open("/home/adeed/Desktop/Python/Ludo/data.dat", "wb") as data:
+    with open("data.dat", "wb") as data:
         pickle.dump(pr1[1], data)
         pickle.dump([i for i, j in globals().items() if j == pr1[2]][0], data)
         pickle.dump([i for i, j in globals().items() if j == pr1[2][1]][0], data)
@@ -597,7 +597,7 @@ save_game.place(x=150, y=50)
 
 
 def new():
-    with open("/home/adeed/Desktop/Python/Ludo/data.dat", "wb") as clear:
+    with open("data.dat", "wb") as clear:
         clear.writable()
         pass
 
@@ -608,7 +608,7 @@ new_game.place(x=150, y=100)
 
 def load_game():
     try:
-        with open("/home/adeed/Desktop/Python/Ludo/data.dat", "rb") as file:
+        with open("data.dat", "rb") as file:
             pr1[1] = pickle.load(file)
             pr1[2] = globals()[pickle.load(file)]
             pr1[2][1] = globals()[pickle.load(file)]
