@@ -1,1 +1,1 @@
-My first game (kind of) made using Tkinter module of python.
+My first game made using Tkinter module of python.
